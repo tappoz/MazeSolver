@@ -1,0 +1,5 @@
+INSTRUCTIONS:
+1) import this project into Eclipse
+2) amend the "filePath" variable at line 23 of this file:
+   [ECLIPSE_WORKSPACE]/MazeSolver/src/tappoz/test/run/MazeMainRun.java
+3) run that class in Eclipse and check the output in the Console View

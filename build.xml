@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<project name="MazeSovler" default="Main" basedir=".">
+	
+	<!-- Variables -->
+	<property name="src.dir" location="src" />
+	<property name="lib.dir" location="lib" />
+	<property name="build.dir" location="bin" />
+	<property name="release.dir" location="release" />
+	
+	<!-- Deletes the existing build and release directories -->
+	<target name="clean">
+		<delete dir="${build.dir}" />
+		<delete dir="${release.dir}" />
+	</target>
+	
+	<!-- Creates the  build and release directories -->
+	<target name="makedir">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${release.dir}" />
+	</target>
+	
+	<!-- Compiles the java code -->
+	<target name="compile" depends="clean, makedir">
+		<javac srcdir="${src.dir}" destdir="${build.dir}" />
+	</target>
+	
+	<!--Creates the deployable jar file  -->
+	<target name="jar" depends="compile">
+		<jar destfile="${release.dir}/mazesolver.jar" basedir="${build.dir}">
+		    <manifest>
+				<attribute name="Main-Class" value="org.tappoz.main.MazeMainRun" />
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="Main" depends="compile, jar">
+		<description>Main target</description>
+	</target>
+
+</project>
