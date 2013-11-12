@@ -1,5 +1,12 @@
-INSTRUCTIONS:
-1) import this project into Eclipse
-2) amend the "filePath" variable at line 23 of this file:
-   [ECLIPSE_WORKSPACE]/MazeSolver/src/tappoz/test/run/MazeMainRun.java
-3) run that class in Eclipse and check the output in the Console View
+This is a recursive version of the maze solver.
+Given a maze, a starting point, and an ending point, 
+the maze solver will find the path that connects 
+the starting point with the ending point.
+
+Compile this project with Ant from the command line using the "build.xml" file:
+$ ant -f build.xml
+
+Then you should see a "release" folder containing the Jar file.
+
+Run the Jar file adding the path to the Maze details as:
+$ java -jar mazesolver.jar /file/path/to/the/file/containing/the/details/of/the/match
